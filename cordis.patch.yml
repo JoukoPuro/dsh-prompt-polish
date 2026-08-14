@@ -1,0 +1,9 @@
+# dsh-prompt-polish bundle patch: registers the prompt-polish host row.
+# The row's plugin module resolves from this package's own `main`
+# (lib/index.js). The `dsh.client` declaration in package.json makes the
+# client-modules scan pick up this same package's `./client` export
+# (lib/client.js) as a browser bundle row.
+
+- insert:
+    - id: prompt-polish
+      name: dsh-prompt-polish

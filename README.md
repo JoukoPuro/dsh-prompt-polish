@@ -1,5 +1,7 @@
 # dsh-prompt-polish
 
+English | [中文](README.zh.md)
+
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH) plugin
 that adds a ✨ sparkle button to the web composer's tool row. Click it, pick a
 rewrite style, and the already-connected LLM rewrites your draft prompt to be

@@ -1,6 +1,6 @@
 {
   "name": "dsh-prompt-polish",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH prompt-polish plugin: an icon-only composer toolbar button that rewrites the current draft through the connected LLM (balanced / concise / detailed / code styles), with multi-language UI.",
   "type": "module",
   "main": "lib/index.js",
@@ -18,6 +18,8 @@
     "lib/client.js",
     "cordis.patch.yml",
     "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "keywords": [

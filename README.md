@@ -20,6 +20,9 @@ so you can review before sending.
 
 - DeepSeek Harness (`@deepseek-ai/dsh`) web profile running, with a model
   adapter configured (e.g. the DeepSeek provider with an API key in Settings).
+- Compatible with both DSH `0.1.0-rc.6` (InputZone owner props) and
+  `0.1.5-rc.2+` (standard-kit `useInput` hook); the draft source is negotiated
+  at runtime.
 
 ## Install
 

@@ -3,6 +3,19 @@
 All notable changes to this plugin are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] - 2026-10-17
+
+### Fixed
+
+- **A truncated rewrite failed the whole action.** When the model hit the
+  output cap, the stream's `max-tokens` finish reason was treated as an error
+  and the host answered HTTP 500, so the user only saw the generic
+  "polish failed" toast. `max-tokens` and `tool-calls` finishes now return
+  the produced text (a truncated rewrite still beats the raw draft) and log a
+  truncation warning; only `error` / `aborted` finishes fail the action, and
+  they carry the provider's message. The default output cap is raised from
+  2048 to 4096 tokens so detailed rewrites fit without truncation.
+
 ## [0.2.0] - 2026-10-17
 
 ### Added

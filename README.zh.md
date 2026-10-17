@@ -18,8 +18,9 @@
 
 - 已运行的 DeepSeek Harness（`@deepseek-ai/dsh`）web profile，并已配置模型适配器
   （例如在设置中为 DeepSeek 服务商配置了 API Key）。
-- 同时兼容 DSH `0.1.0-rc.6`（InputZone owner props）与 `0.1.5-rc.2+`
-  （标准 kit 的 `useInput` hook）；草稿来源在运行时自动协商。
+- 兼容 DSH `0.1.0-rc.6` 到 `0.2.x`（通过 `engines.dsh` 声明）。草稿来源在运行时
+  自动协商（0.1.0 用 InputZone owner props，0.1.5+ 用标准 kit 的 `useInput` hook），
+  图标名也同时兼容两代 primitives 命名。
 
 ## 安装
 

@@ -3,6 +3,31 @@
 All notable changes to this plugin are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] - 2026-10-17
+
+### Added
+
+- **DSH 0.2.x support.** The plugin now declares its runtime requirement with
+  `engines.dsh: ">=0.1.0-rc.6 <0.3.0"`, which DSH 0.2's plugin-compatibility
+  gate reads directly (it ignores `peerDependencies` when `engines.dsh` is
+  present). One artifact therefore installs on both the 0.1.x and 0.2.x lines.
+
+### Fixed
+
+- **Icons no longer resolve on DSH 0.2.1-rc.1.** That release renamed the whole
+  primitives icon set from size suffixes to weight suffixes
+  (`IconSparkle16` → `IconSparkleRegular`, `IconChecklistOutline14` →
+  `IconChecklistOutlineRegular`, …), so every hard-coded name was `undefined`
+  and the button could not render. Icons are now resolved at runtime by probing
+  the 0.2 names first and falling back to the 0.1 names; a total miss degrades
+  to no icon instead of a crash.
+
+### Notes
+
+- Verified against DSH `0.2.1-rc.1`: the boot row is served, the host route
+  answers 200, and the bundle passes the full harness (20 checks, including
+  both icon-naming generations and 14 language cases).
+
 ## [0.1.1] - 2026-09-11
 
 ### Fixed

@@ -3,6 +3,34 @@
 All notable changes to this plugin are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-10-18
+
+### Added
+
+- **Restore the original prompt.** After a polish the composer now shows a
+  second toolbar button (refresh glyph, localized tooltip) that puts the
+  user-authored draft back. Opening it presents an explicit confirm row
+  ("confirm restore" / "cancel") so a stray click cannot silently discard the
+  polished text; cancelling leaves the draft untouched. The restore point is
+  captured before the first polish and is *not* overwritten by later polishes,
+  so chained polishes always restore the text the user originally typed.
+  Restoring clears the affordance and shows a confirmation toast; polishing
+  again afterwards works exactly as before. The button is disabled while a
+  request is in flight.
+- **Animated loading state.** While a rewrite is in flight the toolbar button
+  shows the loading glyph inside a spinning wrapper instead of a static icon.
+  The animation is a GPU-composited `transform: rotate` (no per-frame layout or
+  paint), lives in one plugin-owned stylesheet that is removed on unload, and
+  is disabled under `prefers-reduced-motion: reduce`. The spinner starts with
+  the request and stops on success, failure, and empty-draft transitions.
+
+### Notes
+
+- Both features are client-side only; the host route is unchanged.
+- Harness coverage grew to 26 checks (restore flow, chained-polish restore
+  point, cancel safety, spinner start/stop, plus the existing compatibility and
+  i18n matrix).
+
 ## [0.2.1] - 2026-10-17
 
 ### Fixed
